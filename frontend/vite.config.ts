@@ -7,15 +7,15 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/agents": {
-        target: "http://localhost:3001",
+        target: "https://spendguard-backend-production-0407.up.railway.app",
         changeOrigin: true,
       },
       "/workflows": {
-        target: "http://localhost:3001",
+        target: "https://spendguard-backend-production-0407.up.railway.app",
         changeOrigin: true,
       },
       "/ws/telemetry": {
-        target: "http://localhost:3001",
+        target: "https://spendguard-backend-production-0407.up.railway.app",
         ws: true,
         changeOrigin: true,
         secure: false,
@@ -25,7 +25,7 @@ export default defineConfig({
           "X-SpendGuard-Key": "gw_btech-ab_1275d2dc4fedcf0174438e1cefcec0b8572d570c65401ef2",
         },
       },
-      "/v1": "http://localhost:3001",
+      "/v1": "https://spendguard-backend-production-0407.up.railway.app",
     },
   },
 });

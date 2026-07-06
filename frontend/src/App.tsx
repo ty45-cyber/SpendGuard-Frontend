@@ -14,15 +14,14 @@ const EMPTY_SUMMARY: LedgerSummary = {
   total_saved_cents: 0, total_charged_cents: 0,
 };
 
-const API = import.meta.env.VITE_API_BASE ?? "http://localhost:3001";
+const API = import.meta.env.VITE_API_BASE ?? "https://spendguard-backend-production-0407.up.railway.app";
 const AUTH_HEADERS = {
   "Content-Type": "application/json",
   "X-SpendGuard-Key": "gw_btech-ab_1275d2dc4fedcf0174438e1cefcec0b8572d570c65401ef2",
 };
 
 function getWebSocketUrl() {
-  const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-  return `${protocol}//${window.location.host}/ws/telemetry`;
+  return "wss://spendguard-backend-production-0407.up.railway.app/ws/telemetry";
 }
 
 export default function App() {
